@@ -2,59 +2,23 @@
   <section class="section">
     <div class="columns is-multiline has-text-centered">
       <p class="title column is-full">
-        {{ $t('your_weight_in_kg') }} {{ calculatedWeight }}
+        {{ $t('your_weight_in_kg') }} {{weightKg}}
       </p>
       <div class="column is-full">
-        <div class="select is-rounded">
-            <select v-model="hundredNumber">
-              <option v-for="number in numbersWithId(weightNumbersHundred)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
-          <div class="select is-rounded">
-            <select v-model="tenNumber">
-              <option v-for="number in numbersWithId(weightNumbersTen)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
-          <div class="select is-rounded">
-            <select v-model="unitNumber">
-              <option v-for="number in numbersWithId(weightNumbersUnit)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
+        <div class="column is-half is-offset-one-quarter">
+          <input v-model="weightKg" class="input" type="number" placeholder="60">
+        </div>
       </div>
     </div>
 
     <div class="columns is-multiline has-text-centered">
       <p class="title column is-full">
-        {{ $t('your_age') }} {{ calculatedAge }}
+        {{ $t('your_age') }} {{ ageNumber }}
       </p>
       <div class="column is-full">
-        <div class="select is-rounded">
-            <select v-model="hundredAgeNumber">
-              <option v-for="number in numbersWithId(weightAgeNumbersHundred)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
-          <div class="select is-rounded">
-            <select v-model="tenAgeNumber">
-              <option v-for="number in numbersWithId(weightAgeNumbersTen)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
-          <div class="select is-rounded">
-            <select v-model="unitAgeNumber">
-              <option v-for="number in numbersWithId(weightAgeNumbersUnit)" :key="number.key">
-                {{ number.value }}
-              </option>
-            </select>
-          </div>
+        <div class="column is-half is-offset-one-quarter">
+          <input v-model="ageNumber" class="input" type="number" placeholder="24">
+        </div>
       </div>
     </div>
     <div>
@@ -85,7 +49,9 @@ export default {
       unitNumber: 0,
       hundredAgeNumber: 0,
       tenAgeNumber: 0,
-      unitAgeNumber:0
+      unitAgeNumber: 0,
+      weightKg: null,
+      ageNumber: null
     }
   },
   methods: {
@@ -105,28 +71,16 @@ export default {
     }
   },
   computed: {
-    calculatedWeight: function () {
-      const { hundredNumber, tenNumber, unitNumber} = this
-
-      return hundredNumber * 100 + tenNumber * 10 + unitNumber * 1
-    },
-
-    calculatedAge: function () {
-      const { hundredAgeNumber, tenAgeNumber, unitAgeNumber} = this
-
-      return hundredAgeNumber * 100 + tenAgeNumber * 10 + unitAgeNumber * 1
-    },
-
     waterLiters: function () {
-      const { waterMlQuantityPerKgPerAge, calculatedAge, calculatedWeight } = this
-      const dailyMlWaterQuantity = waterMlQuantityPerKgPerAge(calculatedAge) * calculatedWeight
+      const { waterMlQuantityPerKgPerAge, ageNumber, weightKg } = this
+      const dailyMlWaterQuantity = waterMlQuantityPerKgPerAge(ageNumber) * weightKg
       const dailyLiterWaterQuantity = dailyMlWaterQuantity / 1000
       return dailyLiterWaterQuantity
     },
 
     hasWeightAndAge: function() {
-      const {  calculatedAge, calculatedWeight } = this
-      return calculatedAge > 0 && calculatedWeight > 0
+      const {  ageNumber, weightKg } = this
+      return ageNumber > 0 && weightKg > 0
     }
   }
 }
