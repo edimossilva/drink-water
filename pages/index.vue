@@ -38,26 +38,11 @@ export default {
 
   data () {
     return {
-      weightNumbersHundred: [0,1,2,3,4],
-      weightNumbersTen: [0,1,2,3,4,5,6,7,8,9],
-      weightNumbersUnit: [0,1,2,3,4,5,6,7,8,9],
-      weightAgeNumbersHundred: [0,1],
-      weightAgeNumbersTen: [0,1,2,3,4,5,6,7,8,9],
-      weightAgeNumbersUnit: [0,1,2,3,4,5,6,7,8,9],
-      hundredNumber: 0,
-      tenNumber: 0,
-      unitNumber: 0,
-      hundredAgeNumber: 0,
-      tenAgeNumber: 0,
-      unitAgeNumber: 0,
       weightKg: null,
       ageNumber: null
     }
   },
   methods: {
-    numbersWithId(numbers) {
-      return numbers.map(n => ({ value: n, key: n + Math.random()}))
-    },
     waterMlQuantityPerKgPerAge(age) {
       if (age <= 17) {
         return 40
