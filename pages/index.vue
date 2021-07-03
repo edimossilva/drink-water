@@ -2,7 +2,7 @@
   <section class="section">
     <div class="columns is-multiline has-text-centered">
       <p class="title column is-full">
-        Your weight in kg: {{ calculatedWeight }}
+        {{ $t('your_weight_in_kg') }} {{ calculatedWeight }}
       </p>
       <div class="column is-full">
         <div class="select is-rounded">
@@ -31,7 +31,7 @@
 
     <div class="columns is-multiline has-text-centered">
       <p class="title column is-full">
-        Your age : {{ calculatedAge }} {{ $t('message') }}
+        {{ $t('your_age') }} {{ calculatedAge }}
       </p>
       <div class="column is-full">
         <div class="select is-rounded">
@@ -60,7 +60,7 @@
     <div>
       <div v-if="hasWeightAndAge" class="columns is-multiline has-text-centered">
         <p class="title column is-full">
-          You should drink {{ waterLiters }} liters per day
+          {{ $t('you_should_drink', { waterLiters: waterLiters }) }}
         </p>
       </div>
     </div>

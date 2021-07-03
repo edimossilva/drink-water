@@ -1,3 +1,5 @@
 {
-  "message": "Hello en"
+  "your_weight_in_kg": "Your weight in kg:",
+  "your_age": "Your age:",
+  "you_should_drink": "You should drink {waterLiters} liters per day"
 }
