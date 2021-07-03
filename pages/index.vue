@@ -31,7 +31,7 @@
 
     <div class="columns is-multiline has-text-centered">
       <p class="title column is-full">
-        Your age : {{ calculatedAge }}
+        Your age : {{ calculatedAge }} {{ $t('message') }}
       </p>
       <div class="column is-full">
         <div class="select is-rounded">

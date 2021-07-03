@@ -1,3 +1,5 @@
+import i18n from './config/i18n'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -29,13 +31,53 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    [
+      'nuxt-i18n',
+      {
+        vueI18nLoader: true,
+        defaultLocale: 'en',
+         locales: [
+          {
+             code: 'en',
+             name: 'English'
+          },
+          {
+             code: 'pt',
+             name: 'Português'
+          }
+        ],
+        vueI18n: i18n,
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected',
+          onlyOnRoot: true,  // recommended
+        }
+      }
+     ]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    'nuxt-i18n',
   ],
+
+  // i18n: {
+  //   locales: ['en', 'pt'],
+  //   defaultLocale: 'en',
+  //   vueI18n: {
+  //     fallbackLocale: 'en',
+  //     messages: {
+  //       en: {
+  //         welcome: 'NAni'
+  //       },
+  //       pt: {
+  //         welcome: 'Bem vindo :)'
+  //       }
+  //     }
+  //   }
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
