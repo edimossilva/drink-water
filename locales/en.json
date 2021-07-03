@@ -1,5 +1,7 @@
 {
+  "app_title": "How much water should you drink per day?",
   "your_weight_in_kg": "Your weight in kg:",
   "your_age": "Your age:",
-  "you_should_drink": "You should drink {waterLiters} liters per day"
+  "you_should_drink": "You should drink {waterLiters} liters per day",
+  "per_day": "per day"
 }

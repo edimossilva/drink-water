@@ -1,34 +1,38 @@
 <template>
-  <section class="section">
-    <div class="columns is-multiline has-text-centered">
-      <p class="title column is-full">
-        {{ $t('your_weight_in_kg') }} {{weightKg}}
-      </p>
-      <div class="column is-full">
-        <div class="column is-half is-offset-one-quarter">
-          <input v-model="weightKg" class="input" type="number" placeholder="60">
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-multiline has-text-centered">
-      <p class="title column is-full">
-        {{ $t('your_age') }} {{ ageNumber }}
-      </p>
-      <div class="column is-full">
-        <div class="column is-half is-offset-one-quarter">
-          <input v-model="ageNumber" class="input" type="number" placeholder="24">
-        </div>
-      </div>
-    </div>
-    <div>
-      <div v-if="hasWeightAndAge" class="columns is-multiline has-text-centered">
-        <p class="title column is-full">
-          {{ $t('you_should_drink', { waterLiters: waterLiters }) }}
+  <div class="columns hero is-fullheight is-centered">
+    <section class="section">
+      <div class="columns is-multiline">
+        <p class="title column is-full has-text-centered">
+          {{ $t('app_title') }}
         </p>
+        <div class="column is-full">
+          <div class="box mx-5">
+            <div class="column is-half is-offset-one-quarter">
+              <div class="field is-normal">
+                <label class="label" for="weightKg">{{ $t('your_weight_in_kg') }}</label>
+              </div>
+              <input v-model="weightKg" name="weightKg" class="input" type="number" placeholder="60">
+            </div>
+
+            <div class="column is-half is-offset-one-quarter mt-5">
+              <div class="field is-normal">
+                <label class="label" for="weightKg">{{ $t('your_age') }}</label>
+              </div>
+              <input v-model="ageNumber" class="input" type="number" placeholder="24">
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div>
+        <div v-if="hasWeightAndAge" class="columns is-multiline has-text-centered">
+          <div class="column is-full title">
+            <p>{{ waterLiters }} {{ $t('per_day') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
