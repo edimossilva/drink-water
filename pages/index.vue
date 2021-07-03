@@ -36,21 +36,21 @@
       <div class="column is-full">
         <div class="select is-rounded">
             <select v-model="hundredAgeNumber">
-              <option v-for="number in numbersWithId(weightNumbersHundred)" :key="number.key">
+              <option v-for="number in numbersWithId(weightAgeNumbersHundred)" :key="number.key">
                 {{ number.value }}
               </option>
             </select>
           </div>
           <div class="select is-rounded">
             <select v-model="tenAgeNumber">
-              <option v-for="number in numbersWithId(weightNumbersTen)" :key="number.key">
+              <option v-for="number in numbersWithId(weightAgeNumbersTen)" :key="number.key">
                 {{ number.value }}
               </option>
             </select>
           </div>
           <div class="select is-rounded">
             <select v-model="unitAgeNumber">
-              <option v-for="number in numbersWithId(weightNumbersUnit)" :key="number.key">
+              <option v-for="number in numbersWithId(weightAgeNumbersUnit)" :key="number.key">
                 {{ number.value }}
               </option>
             </select>
