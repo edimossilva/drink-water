@@ -1,5 +1,11 @@
 # drink-water
 
+## Tasks
+
+✅ Domain
+❌ SEO
+❌ Register water consumed
+
 ## Build Setup
 
 ```bash
