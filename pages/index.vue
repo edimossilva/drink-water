@@ -27,7 +27,7 @@
       <div>
         <div v-if="hasWeightAndAge" class="columns is-multiline has-text-centered">
           <div class="column is-full title">
-            <p>{{ waterLiters }} {{ $t('per_day') }}</p>
+            <p>{{ $n(waterLiters) }} {{ $t('per_day') }}</p>
           </div>
         </div>
       </div>
