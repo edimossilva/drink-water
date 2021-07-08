@@ -3,15 +3,16 @@ import i18n from './config/i18n'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'drink-water',
+    title: 'drink water',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'how much of water should I drink per day?' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'google-site-verification', content:'n99sGsuFPUXjPgK0BszGNuD2Xye1ADfHhmjQt02ccFU' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -63,23 +64,13 @@ export default {
     'nuxt-i18n',
   ],
 
-  // i18n: {
-  //   locales: ['en', 'pt'],
-  //   defaultLocale: 'en',
-  //   vueI18n: {
-  //     fallbackLocale: 'en',
-  //     messages: {
-  //       en: {
-  //         welcome: 'NAni'
-  //       },
-  //       pt: {
-  //         welcome: 'Bem vindo :)'
-  //       }
-  //     }
-  //   }
-  // },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'source-map'
+      }
+    }
   }
 }
