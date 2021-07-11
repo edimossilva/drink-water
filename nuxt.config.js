@@ -53,8 +53,9 @@ export default {
           cookieKey: 'i18n_redirected',
           onlyOnRoot: true,  // recommended
         }
-      }
-     ]
+      },
+    ],
+    "nuxt-compress"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
