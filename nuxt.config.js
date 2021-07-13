@@ -19,6 +19,9 @@ export default {
     ]
   },
 
+  googleAnalytics: {
+    id: 'G-PH0SGG8XTY'
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -55,7 +58,8 @@ export default {
         }
       },
     ],
-    "nuxt-compress"
+    "nuxt-compress",
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -63,6 +67,9 @@ export default {
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     'nuxt-i18n',
+    ['@nuxtjs/google-analytics', {
+      id: 'G-PH0SGG8XTY'
+    }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
